@@ -6,7 +6,7 @@ android.useSupportVectors
 
 name := "shadowsocksr"
 
-applicationId := "in.zhaoj.shadowsocksr"
+applicationId := "in.zhaoj.shadowsocksr.blue-acl"
 
 platformTarget := "android-25"
 

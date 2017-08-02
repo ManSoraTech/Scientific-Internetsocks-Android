@@ -55,10 +55,16 @@
   <string-array name="route_entry">
     <item>Все</item>
     <item>Обход LAN</item>
-    <item>Обходной Китай</item>
-    <item>Обход LAN и Китай</item>
+    <item>Обход Китайских Адресов</item>
+    <item>Обход LAN и Китайских Адресов</item>
     <item>Список GFW</item>
     <item>Пользовательские ACL файла</item>
+    <item>ACLSSR Блок рекламы+Список GFW</item>
+    <item>ACLSSR Блок рекламы+Обход LAN &amp; Китайских Адресов</item>
+    <item>ACLSSR Блок рекламы+Список Киайских Адресов</item>
+    <item>ACLSSR Только Блок рекламы</item>
+    <item>ACLSSR Только GFW список</item>
+    <item>ACLSSR Только Обход LAN &amp; Китайских Адресов</item>
   </string-array>
   <string name="acl_file">ACL File URL</string>
   <string name="aclupdate">ACL Обновить</string>

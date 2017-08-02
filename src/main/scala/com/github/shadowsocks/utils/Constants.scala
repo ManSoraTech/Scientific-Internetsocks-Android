@@ -214,11 +214,11 @@ object State {
 }
 
 object Action {
-  val SERVICE = "in.zhaoj.shadowsocksr.SERVICE"
-  val CLOSE = "in.zhaoj.shadowsocksr.CLOSE"
-  val QUICK_SWITCH = "in.zhaoj.shadowsocksr.QUICK_SWITCH"
-  val SCAN = "in.zhaoj.shadowsocksr.intent.action.SCAN"
-  val SORT = "in.zhaoj.shadowsocksr.intent.action.SORT"
+  val SERVICE = "in.zhaoj.shadowsocksr.blue-acl.SERVICE"
+  val CLOSE = "in.zhaoj.shadowsocksr.blue-acl.CLOSE"
+  val QUICK_SWITCH = "in.zhaoj.shadowsocksr.blue-acl.QUICK_SWITCH"
+  val SCAN = "in.zhaoj.shadowsocksr.blue-acl.intent.action.SCAN"
+  val SORT = "in.zhaoj.shadowsocksr.blue-acl.intent.action.SORT"
 }
 
 object Route {
@@ -229,4 +229,10 @@ object Route {
   val GFWLIST = "gfwlist"
   val CHINALIST = "china-list"
   val ACL = "self"
+  val ACL4SSR_AG = "gfwlist-banAD"
+  val ACL4SSR_AP = "banAD"
+  val ACL4SSR_AB = "backcn-banAD"
+  val ACL4SSR_AA = "onlybanAD"
+  val ACL4SSR_NG = "fullgfwlist"
+  val ACL4SSR_NP = "nobanAD"
 }

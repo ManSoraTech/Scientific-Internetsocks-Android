@@ -162,7 +162,7 @@ class ShadowsocksNatService extends BaseService {
 
     var remote_dns = false
 
-    if (profile.route == Route.ACL) {
+    if (profile.route == Route.ACL || profile.route == Route.ACL4SSR_AA || profile.route == Route.ACL4SSR_AB || profile.route == Route.ACL4SSR_AG || profile.route == Route.ACL4SSR_AP || profile.route == Route.ACL4SSR_NG || profile.route == Route.ACL4SSR_NP) {
         //decide acl route
         val total_lines = Source.fromFile(new File(getApplicationInfo.dataDir + '/' + profile.route + ".acl")).getLines()
         total_lines.foreach((line: String) => {
@@ -176,7 +176,7 @@ class ShadowsocksNatService extends BaseService {
       case Route.BYPASS_CHN | Route.BYPASS_LAN_CHN | Route.GFWLIST => {
         getBlackList
       }
-      case Route.ACL => {
+      case Route.ACL | Route.ACL4SSR_AA | Route.ACL4SSR_AB | Route.ACL4SSR_AG | Route.ACL4SSR_AP | Route.ACL4SSR_NG | Route.ACL4SSR_NP => {
         if (remote_dns) {
             ""
         } else {
@@ -202,7 +202,7 @@ class ShadowsocksNatService extends BaseService {
         ConfigUtils.PDNSD_DIRECT.formatLocal(Locale.ENGLISH, "", getApplicationInfo.dataDir,
           "127.0.0.1", profile.localPort + 53, china_dns_settings, profile.localPort + 63, reject)
       }
-      case Route.ACL => {
+      case Route.ACL | Route.ACL4SSR_AA | Route.ACL4SSR_AB | Route.ACL4SSR_AG | Route.ACL4SSR_AP | Route.ACL4SSR_NG | Route.ACL4SSR_NP => {
         if (!remote_dns) {
             ConfigUtils.PDNSD_DIRECT.formatLocal(Locale.ENGLISH, "", getApplicationInfo.dataDir,
               "127.0.0.1", profile.localPort + 53, china_dns_settings, profile.localPort + 63, reject)

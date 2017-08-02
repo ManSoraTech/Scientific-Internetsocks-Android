@@ -100,6 +100,12 @@
         <item>gfwlist</item>
         <item>china-list</item>
         <item>self</item>
+        <item>gfwlist-banAD</item>
+        <item>banAD</item>
+        <item>fullgfwlist</item>
+        <item>nobanAD</item>
+        <item>backcn-banAD</item>
+        <item>onlybanAD</item>
     </string-array>
 
     <string-array name="bypass_private_route">

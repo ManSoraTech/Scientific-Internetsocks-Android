@@ -29,11 +29,17 @@ class AclSyncJob(route: String) extends Job {
   override def onRunJob(params: Params): Result = {
     val filename = route + ".acl"
     try {
-      if(route != "self")
+      if(route != "self" && route != "gfwlist-banAD" && route != "banAD" && route != "fullgfwlist" && route != "nobanAD" && route != "backcn-banAD" && route != "onlybanAD")
       {
         //noinspection JavaAccessorMethodCalledAsEmptyParen
         IOUtils.writeString(app.getApplicationInfo.dataDir + '/' + filename, autoClose(
-          new URL("https://raw.githubusercontent.com/shadowsocksr/shadowsocksr-android/nokcp/src/main/assets/acl/" +
+          new URL("https://raw.githubusercontent.com/BROBIRD/shadowsocksr-android/nokcp/src/main/assets/acl/" +
+            filename).openConnection().getInputStream())(IOUtils.readString))
+      }
+      else if(route == "gfwlist-banAD" || route == "banAD" || route == "fullgfwlist" || route == "nobanAD" || route == "backcn-banAD" || route == "onlybanAD")
+      {
+        IOUtils.writeString(app.getApplicationInfo.dataDir + '/' + filename, autoClose(
+          new URL("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/" +
             filename).openConnection().getInputStream())(IOUtils.readString))
       }
       Result.SUCCESS

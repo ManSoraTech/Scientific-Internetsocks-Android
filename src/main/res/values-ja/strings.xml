@@ -132,6 +132,12 @@
     <item>中国本土からアクセス不可なアドレス以外を迂回する</item>
     <item>中国本土のアドレス以外を迂回する</item>
     <item>カスタム ACL ファイル</item>
+    <item>ACLSSR Ad抜き+中国本土からアクセス不可なアドレス以外を迂回する</item>
+    <item>ACLSSR Ad抜き+LAN及び中国本土のアドレスを迂回する</item>
+    <item>ACLSSR Ad抜き+中国本土のアドレス以外を迂回する</item>
+    <item>ACLSSR Ad抜きのみ</item>
+    <item>ACLSSR 中国本土からアクセス不可なアドレス以外を迂回するのみ</item>
+    <item>ACLSSR LAN及び中国本土のアドレスを迂回するのみ</item>
   </string-array>
 
   <string name="acl_file">ACL ファイル URL</string>
