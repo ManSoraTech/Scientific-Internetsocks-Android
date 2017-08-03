@@ -1,7 +1,7 @@
 language: scala
 
 jdk:
-  - oraclejdk8
+    - oraclejdk8
 
 sudo: false
 
@@ -24,8 +24,8 @@ before_cache:
 
 cache:
     directories:
-        - $HOME/.ivy2
-        - $HOME/.sbt
+        - "$HOME/.ivy2"
+        - "$HOME/.sbt"
 
 android:
     components:
@@ -38,10 +38,20 @@ install:
     - ./travis-ci/setup.sh
     - export NDK_CCACHE=ccache
     - export ARCH=`uname -m`
-    - export ANDROID_NDK_HOME=$HOME/.android/android-ndk-r12b
+    - export ANDROID_NDK_HOME=$HOME/.android/android-ndk-r14b
     - export ANDROID_HOME=$HOME/.android/android-sdk-linux
     - export PATH=${ANDROID_NDK_HOME}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}
     - cp local.properties.travis local.properties
 
 script:
     - sbt native-build android:package-release
+    - mv target/android/output/shadowsocksr-release.apk target/android/output/shadowsocksr_Akkariiin_blue_acl.apk
+
+deploy:
+  provider: releases
+  file: "/home/travis/build/ManSoraTech/Scientific-Internetsocks-Android/target/android/output/shadowsocksr_Akkariiin_blue_acl.apk"
+  skip_cleanup: true
+  api_key:
+    secure: lU72RsnxjdrYPzZ7VECUVYlMLyMCpOeYBkCLUrODM8oSvcz0uzRAopbjszKjn+jA+jwobA8Lf5m2wO86pYMpfU8UHTtu0QItNSxBB4tG/bmVv1VeXzac0FTrEiZDFZFdt2BsDUJaeQ+mV3aOTy5M1BbkzDdPPPNklZ9Qqwb0XE9gHRRJYiucmVSFvgoapwyu8hrKru6LSvODC+tbzCCrpA3pIFg+BBaXc62llne4NLCpMBVFiw5xGlJS/+SvuC68Pk7wsAoPEljNcF2ppOKxc0zCTwAt8urCHw4OHtcwkCwl/8PnSJcpBPbddZ2XYvwloJa/+QC2Q+UqkuLgB+dowOYhdhqobrM+n75L6nqZ3KzBMLUyeeZiNAOwCzo8c4/xgkJPZ+rgBCu4kZ7glZDYV53CQPMqywNITpM3TSScoUjkj4oM4TqSs95PkjoLAMeHrcTBp94xW6QeO+ruiTsHdNihn3Hh2KfuaZKgXDogkSv5ZfxalyP4ipfhkLWNY/GEDU/cMdDyyC7ZFN6w6XTBSj5OfZFOv3CuyACIfU6BJHtYW3siRSFt9m1TkYvYzTMe643SONJwsgdrI5CCIsqmYU+oaJbhh84bi4s7wW5Z8OVPFIe00F6BQHu1ANa0guL217BzrkQTuVRYTjU+45mVgvr45pBUrQs58hP5BipdZOc=
+  on:
+    tags: true
