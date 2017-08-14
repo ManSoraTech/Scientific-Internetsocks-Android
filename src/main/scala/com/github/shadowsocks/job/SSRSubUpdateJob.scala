@@ -50,15 +50,41 @@ class SSRSubUpdateJob() extends Job {
                 case _ => null
               }
 
+              var ssrurl = "";
+              var ssrauthuser = "";
+              var ssrauthpwd = "";
+              if(ssrsub.url.contains("@")){
+                  var s_url = ssrsub.url.split("/");
+                  val urlargs = s_url(2).split("@");
+                  val authargs = urlargs(0).split(":");
+                  ssrauthuser = authargs(0)
+                  if(authargs.length>1) ssrauthpwd = authargs(1);
+                  s_url(2)=urlargs(1);
+                  ssrurl=s_url.mkString("/");
+              }else{
+                  ssrurl=ssrsub.url;
+              }
+           
+              val auth = new Authenticator() {
+                  def authenticate(route:Route, response:Response):Request = {
+                       val credential = Credentials.basic(ssrauthuser, ssrauthpwd);
+                       response.request().newBuilder()
+                            .header("Authorization", credential)
+                            .build();
+                  }
+              }
+
               val builder = new OkHttpClient.Builder()
                               .connectTimeout(5, TimeUnit.SECONDS)
                               .writeTimeout(5, TimeUnit.SECONDS)
                               .readTimeout(5, TimeUnit.SECONDS)
+                              .authenticator(auth)
 
               val client = builder.build();
 
               val request = new Request.Builder()
-                .url(ssrsub.url)
+                .url(ssrurl)
+		.header("Authorization", Credentials.basic(ssrauthuser, ssrauthpwd))
                 .build();
 
               try {
@@ -125,3 +151,4 @@ class SSRSubUpdateJob() extends Job {
     }
   }
 }
+
