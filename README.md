@@ -6,7 +6,7 @@ A [shadowsocksR](https://github.com/breakwa11/shadowsocks-rss/) client for Andro
 
 ### CI STATUS
 
-[![Build Status](https://travis-ci.org/BROBIRD/shadowsocksr-android.svg?branch=nokcp-blue-acl)](https://travis-ci.org/BROBIRD/shadowsocksr-android)
+[![Build Status](https://travis-ci.org/ManSoraTech/Scientific-Internetsocks-Android.svg?branch=nokcp-blue-acl)](https://travis-ci.org/ManSoraTech/Scientific-Internetsocks-Android)
 
 ### PREREQUISITES
 
