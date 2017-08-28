@@ -51,28 +51,24 @@
 
     <string-array name="protocol_entry">
         <item>origin</item>
-        <item>verify_simple</item>
-        <item>verify_sha1</item>
-        <item>auth_sha1</item>
-        <item>auth_sha1_v2</item>
-	      <item>auth_sha1_v4</item>
+        <item>auth_sha1_v4</item>
         <item>auth_aes128_sha1</item>
         <item>auth_aes128_md5</item>
         <item>auth_chain_a</item>
         <item>auth_chain_b</item>
+        <item>auth_chain_c</item>
+        <item>auth_chain_d</item>
     </string-array>
 
     <string-array name="protocol_value">
         <item>origin</item>
-        <item>verify_simple</item>
-        <item>verify_sha1</item>
-        <item>auth_sha1</item>
-        <item>auth_sha1_v2</item>
-	      <item>auth_sha1_v4</item>
+        <item>auth_sha1_v4</item>
         <item>auth_aes128_sha1</item>
         <item>auth_aes128_md5</item>
         <item>auth_chain_a</item>
         <item>auth_chain_b</item>
+        <item>auth_chain_c</item>
+        <item>auth_chain_d</item>
     </string-array>
 
 
@@ -80,7 +76,6 @@
         <item>plain</item>
         <item>http_simple</item>
         <item>http_post</item>
-        <item>tls_simple</item>
         <item>tls1.2_ticket_auth</item>
     </string-array>
 
@@ -88,7 +83,6 @@
         <item>plain</item>
         <item>http_simple</item>
         <item>http_post</item>
-        <item>tls_simple</item>
         <item>tls1.2_ticket_auth</item>
     </string-array>
 

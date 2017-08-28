@@ -3,6 +3,7 @@ bin
 gen
 target
 local.properties
+Love4Taylor.keystore
 .classpath
 .project
 .settings
