@@ -38,7 +38,7 @@
         <meta-data android:name="com.google.android.gms.version"
                    android:value="@integer/google_play_services_version"/>
         <meta-data android:name="com.google.android.backup.api_key"
-                   android:value="AEdPqrEAAAAIPs-N3mj5f0FhZ99WjwOUoCXeCuQWToee2uvMAw"/>
+                   android:value="AEdPqrEAAAAIWYi9MA5fQIIOM-61PWt9fpFGpC3u_P3NkCyYnQ"/>
 
         <!--<activity-->
                 <!--android:name="com.google.android.gms.ads.AdActivity"-->
